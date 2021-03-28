@@ -1,1 +1,1 @@
-# api-planner-bot
+# planner-bot
