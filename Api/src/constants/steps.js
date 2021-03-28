@@ -65,6 +65,7 @@ const STEPS = [
             "Caixa"
             
         ],
+        secondMsg: "*Se quiser pode escrever uma outra opção",
         step: 5,
     },
     {
@@ -117,6 +118,7 @@ const STEPS = [
             "Até R$ 5000,00",
             "Acima de R$ 7000,00."            
         ],
+        secondMsg: "*Se quiser pode escrever uma outra opção",
         step: 10,
     },
     {
