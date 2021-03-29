@@ -7,13 +7,25 @@ import {
   AnswersGrid,
   TextContainer,
   SecondMessageStyle,
+  PackagesGrid,
+  PackageImage,
+  TogGrid,
+  Title,
+  DescriptionGrid,
+  Description,
+  Price,
+  PriceGrid,
+  PriceMiles,
+  TouchImage,
+  PriceClub,
 } from './styles';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import Submit from '../../components/Submit/Submit';
 import axios from 'axios';
 import DefaultInput from '../../components/DefaultInput/DefaultInpt';
+import {Data, OptionsData} from '../../helpers/places.js';
 
-const Questions = () => {
+const Questions = props => {
   useEffect(() => {
     getData();
   }, []);
@@ -32,6 +44,15 @@ const Questions = () => {
       console.log(counter);
       setCounter(counter + 1);
       getData();
+    } else {
+      props.setMiles();
+      props.finish();
+    }
+  }
+
+  function toNextPage() {
+    if (counter === 13) {
+      setCounterData();
     }
   }
 
@@ -40,11 +61,57 @@ const Questions = () => {
       {actualQuestion ? (
         <MainGrid>
           <Question>{actualQuestion.text}</Question>
+          {counter === 13 ? (
+            <TogGrid>
+              {Data.packages.map(item => (
+                <>
+                  <PackagesGrid>
+                    <TouchImage onPress={() => toNextPage()}>
+                      <PackageImage source={item.source} />
+                    </TouchImage>
+                    <DescriptionGrid>
+                      <Title>{item.name}</Title>
+                      <Description>{item.description}</Description>
+                      <PriceGrid>
+                        <Price>Em Dinheiro: R$ {item.prices.money}</Price>
+                        <PriceMiles>
+                          Apenas Milhas: {item.prices.miles} milhas
+                        </PriceMiles>
+                        <PriceClub>
+                          Clube Smiles: R$ {item.prices.club}
+                        </PriceClub>
+                      </PriceGrid>
+                    </DescriptionGrid>
+                  </PackagesGrid>
+                </>
+              ))}
+            </TogGrid>
+          ) : null}
+          {counter === 15 ? (
+            <>
+              {OptionsData.plusOptions.map(item => (
+                <PackagesGrid>
+                  <TouchImage onPress={() => toNextPage()}>
+                    <PackageImage source={item.source} />
+                  </TouchImage>
+                  <DescriptionGrid>
+                    <Description>{item.description}</Description>
+                    <PriceGrid>
+                      <Price>R$ {item.price}</Price>
+                    </PriceGrid>
+                  </DescriptionGrid>
+                </PackagesGrid>
+              ))}
+            </>
+          ) : null}
           <AnswersGrid>
             {actualQuestion?.options?.map(item => (
               <>
                 <TextContainer key={counter + 1}>
-                  <BouncyCheckbox style={{margin: 0}} />
+                  <BouncyCheckbox
+                    onPress={() => toNextPage()}
+                    style={{margin: 0}}
+                  />
                   <AnswerText>{item}</AnswerText>
                 </TextContainer>
               </>

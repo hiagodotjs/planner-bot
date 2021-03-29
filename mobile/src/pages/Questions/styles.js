@@ -39,3 +39,65 @@ export const TextContainer = styled.View`
 export const SecondMessageStyle = styled.Text`
   color: #696969;
 `;
+
+export const PackagesGrid = styled.View`
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 90%;
+`;
+
+export const PackageImage = styled.Image`
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+`;
+
+export const Title = styled.Text`
+  margin-left: 10px;
+  color: #ff5a00;
+  font-size: 15px;
+`;
+
+export const Description = styled.Text`
+  margin-left: 10px;
+  color: #2e2e2e;
+  font-size: 13px;
+  margin-top: 10px;
+  width: 80%;
+`;
+
+export const Price = styled.Text`
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #2e2e2e;
+  font-size: 12px;
+`;
+
+export const PriceMiles = styled.Text`
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #ff5a00;
+  font-size: 12px;
+`;
+
+export const PriceClub = styled.Text`
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #663399;
+  font-size: 12px;
+`;
+
+export const DescriptionGrid = styled.View`
+  width: 80%;
+`;
+
+export const TogGrid = styled.View`
+  margin-top: 40px;
+  display: flex;
+  width: 350px;
+`;
+
+export const PriceGrid = styled.View``;
+
+export const TouchImage = styled.TouchableHighlight``;

@@ -20,6 +20,10 @@ const Main = () => {
     setStarted(started => !started);
   }
 
+  function setVisivleMiles() {
+    setVisible(visible => !visible);
+  }
+
   return (
     <>
       {!hasStart ? (
@@ -31,12 +35,17 @@ const Main = () => {
             Olá, meu nome é Miles, seu concierge virtual, estou aqui para
             planejar sua viagem, por favor digite seu CPF para iniciarmos
           </TextTemplate>
-          <CpfINput onPressIn={() => setVisible(false)} name="documentId" />
+          <CpfINput onPressIn={() => setVisivleMiles()} name="documentId" />
 
           <StartBtn hide={() => setHide()} textArea="Inicar" />
         </MainGrid>
       ) : null}
-      {hasStart ? <Questions /> : null}
+      {hasStart ? (
+        <Questions
+          setMiles={() => setVisivleMiles()}
+          finish={() => setHide()}
+        />
+      ) : null}
     </>
   );
 };
