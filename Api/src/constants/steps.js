@@ -202,7 +202,7 @@ const STEPS = [
     },
     {
         text: "Pagamento confirmado! Agora é só preparar as malas!",
-        inputType: "noAnswer",
+        inputType: "multiChoice",
         step: 15,
         lastStep: true
     }
