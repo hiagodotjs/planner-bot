@@ -65,7 +65,7 @@ const Questions = props => {
             <TogGrid>
               {Data.packages.map(item => (
                 <>
-                  <PackagesGrid>
+                  <PackagesGrid key={Math.random()}>
                     <TouchImage onPress={() => toNextPage()}>
                       <PackageImage source={item.source} />
                     </TouchImage>
@@ -90,7 +90,7 @@ const Questions = props => {
           {counter === 15 ? (
             <>
               {OptionsData.plusOptions.map(item => (
-                <PackagesGrid>
+                <PackagesGrid key={Math.random()}>
                   <TouchImage onPress={() => toNextPage()}>
                     <PackageImage source={item.source} />
                   </TouchImage>
@@ -107,7 +107,7 @@ const Questions = props => {
           <AnswersGrid>
             {actualQuestion?.options?.map(item => (
               <>
-                <TextContainer key={counter + 1}>
+                <TextContainer key={Math.random()}>
                   <BouncyCheckbox
                     onPress={() => toNextPage()}
                     style={{margin: 0}}
