@@ -111,7 +111,7 @@ const STEPS = [
     },
     {
         text: "Ate quanto pretende gastar nessa viagem?",
-        inputType: "singleChoiceAndFreeText",
+        inputType: "multiChoiceAndFreeText",
         options: [
             "Até R$ 1000,00",
             "Até R$ 3000,00",
@@ -123,7 +123,7 @@ const STEPS = [
     },
     {
         text: "Como prefere pagar",
-        inputType: "singleChoice",
+        inputType: "multiChoice",
         options: [
             "Totalmente em milhas",
             "Totalmente em dinheiro",
@@ -179,7 +179,7 @@ const STEPS = [
     },
     {
         text: "Que legal! Você selecionou uma viagem que será, sem dúvidas, incrível! Essa viagem ficará no preço de R$ 2500,00. Porém se assinar o Clube Smiles, ficará por R$ 2000,00 e além disso você acumula milhas todo mês por apenas R$ 42,00. Gostaria de assinar?",
-        inputType: "singleChoice",
+        inputType: "multiChoice",
         options: [
             "Sim",
             "Não"
